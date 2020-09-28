@@ -4,17 +4,19 @@ body {
 	padding: 0;
 }
 body{
-	height: 100vh;
-	width: 100vw;
+	height: 100%;
+	width: 100%;
 	direction: rtl;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
 	box-sizing: border-box;
+	position: relative;
+	overflow-x: hidden;
 }
 #root{
-	height: 93vh;
+	min-height: 93vh;
 	background-color: #f5f5f5;
 }
 #footer{
@@ -23,7 +25,9 @@ body{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-
+	position: relative;
+	bottom: 0;
+	width: 100%;
 }
 
 button {
@@ -105,26 +109,13 @@ button {
 	text-rendering: optimizeLegibility;
 }
 
-.new-todo,
-.edit {
-	position: relative;
-	margin: 0;
-	width: 100%;
-	font-size: 24px;
-	font-family: inherit;
-	font-weight: inherit;
-	line-height: 1.4em;
-	color: inherit;
-	padding: 6px;
-	border: 1px solid #999;
-	box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
-	box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
+
 
 .new-todo {
-	padding: 16px 16px 16px 60px;
+	width: 100%;
+	font-size:1.5em;
+	padding: 16px 0;
+	text-align: center;
 	border: none;
 	background: rgba(0, 0, 0, 0.003);
 	box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
@@ -284,18 +275,23 @@ button {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
+	height: auto;
 	padding: 10px 3px;
-    height: 35px;
     text-align: center;
     font-size: 15px;
 	border-top: 1px solid #e6e6e6;
 }
-.footer div{
+/*.footer div{
 	width: 33.33%;
+}*/
+.todo-count {
+	width: 19.99%;
 }
-
-.footer div button {
-	padding: 2px;
+ .remover-section{
+	width: 39.98%;
+}
+.filter-section{
+	width: 59.97%;
 }
 
 .pages{
@@ -320,15 +316,21 @@ button {
 				0 25px 2px -12px rgba(0, 0, 0, 0.2);
 }
 .footer .todo-count {
-	padding: 7px;
+	padding: 7px 7px 7px 2px;
 	font-weight: bold;
 }
 .footer .filter-section button,.footer  .remover-section button{
 	margin: 0 5px 0 0;
-	padding: 7px;
+	padding: 10px;
+	color: gray;
+	font-weight: bold;
 	background-color: #cc9a9a18;
 	border: solid 1px  #cc9a9a18;
-	border-radius: 20px;
+	border-radius: 10px;
+	transition: all .5s;
+}
+.footer .filter-section button:hover ,.footer  .remover-section button:hover{
+	background-color: #cc9a9a56;
 }
 .page-footer{
 	height: 100%;
@@ -336,6 +338,9 @@ button {
 }
 .page-footer div{
 	padding-top: 1%;
+}
+.page-footer .fa-heart{
+	color: red;
 }
 
 
@@ -345,11 +350,9 @@ button {
 		font-size: 50px;
 	}
     .todoapp{  
-		width: 300px;
+		width: 315px;
 	}
-	/*.todo-list, .view, .view label, .view .fa.fa-close{
-		font-size: 70%;
-	}*/
+	
 	.todo-list li{
 		font-size: 10px;
 	}
@@ -360,23 +363,34 @@ button {
 		margin-bottom: 0;
 	}
 	
-	.footer {
-		height: 20px;
-	}
 	.todo-count{
-		font-size:30%;
+		font-size:.5em;
 	}
 	.new-todo{
-		font-size:40%;
-	}
-	.footer{
-		display: flex;
-    justify-content: center;
+		font-size:1.2em;
+		padding: 50px 0;
 	}
 	
+	.footer .filter-section{
+		height: auto;
+	}
 	.footer .filter-section button, .footer .remover-section button{
+		width: 90%;
 		padding: 3px;
-		font-size:30%;
+		margin: 0 0 3px 0;
+		font-size:.8em;
+		border-radius: 2px;
+	}
+	.footer .remover-section button{
+		height: 90%;
+		margin: 0 0 0 2px;
+
+	}
+	footer {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		height: auto;
 	}
 	#footer .page-footer div{
 		font-size:8px;
@@ -387,6 +401,12 @@ button {
 	.todoapp{  
 		width: 250px;
 	}
+	.todo-count {
+		width: 16.66%;
+	}
+	.filter-section, .remover-section{
+		width: 41.65%;
+	}
 }
 
 @media screen and (min-device-width: 481px) and (max-device-width: 768px) {
@@ -395,15 +415,18 @@ button {
         max-width: 750px;
 	}
 	.todo-count{
-		font-size:8px;
+		font-size:.8em;
 	}
 	.footer .filter-section button, .footer .remover-section button{
-		padding: 3px;
-		font-size:50%;
+		font-size:.8em;
 	}
 	.new-todo{
-		font-size:60%;
+		font-size:1.2em;
+		padding: 50px 0;
+		text-align: center;
+		
 	}
+	/**/
 
 }
 @media screen and (min-width:769px){
