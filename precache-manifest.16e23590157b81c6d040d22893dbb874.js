@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "85f5e0c10c1e45fd61c9",
+    "revision": "722ddaa5d453fd1c7da0",
     "url": "/todo-app-prstwo/static/css/main.49df8288.chunk.css"
   },
   {
-    "revision": "85f5e0c10c1e45fd61c9",
-    "url": "/todo-app-prstwo/static/js/main.85f5e0c1.chunk.js"
+    "revision": "722ddaa5d453fd1c7da0",
+    "url": "/todo-app-prstwo/static/js/main.722ddaa5.chunk.js"
   },
   {
     "revision": "140157ea99587e064d61",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/todo-app-prstwo/static/js/runtime~main.bc2afda7.js"
   },
   {
-    "revision": "83edcc67c2bda4840951c14dadb35f09",
+    "revision": "47f574b2d2e8457caf91fda253d946da",
     "url": "/todo-app-prstwo/index.html"
   }
 ];
