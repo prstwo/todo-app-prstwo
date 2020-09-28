@@ -17,6 +17,7 @@ class TodoItems extends Component {
     if (completedTodos.length==0){
       alert("هیچ آیتم انجام شده‌ای وجود ندارد")
       document.getElementById("allList").style.display="block";
+      document.getElementById("doneList").style.display="none";
       document.getElementById("activeList").style.display="none";
     }
     else{
@@ -32,6 +33,7 @@ class TodoItems extends Component {
       alert("تمام آیتم‌ها انجام شده‌است")
       document.getElementById("allList").style.display="block";
       document.getElementById("doneList").style.display="none";
+      document.getElementById("activeList").style.display="none";
     }
     else{
       document.getElementById("allList").style.display="none";
