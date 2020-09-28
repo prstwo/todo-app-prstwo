@@ -46,7 +46,7 @@ class TodoItems extends Component {
             <section className="main">
               <UlElements/> 
             <UlElementsCompleted/> 
-            <UlElementsActive/>   
+            <UlElementsActive/>      
             <div className="footer">
               <div className="todo-count">آیتم ناتمام:<span> {TodoStore.todos.filter(elements =>{return !elements.completed }).length}  </span></div>
               <div className="filter-section">
